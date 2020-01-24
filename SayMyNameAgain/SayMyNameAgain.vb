@@ -20,7 +20,7 @@ Module SayMyNameAgain
         If theName = "Emily" Then
             Console.WriteLine("Hello " & theName & " how are you today?")
         ElseIf theName = "Joe" Then
-            Console.WriteLine("Hello do you prefer Big Joe or Little Joe?")
+            Console.WriteLine("Hello do you prefer Big " & theName & " or Little " & theName & " ?")
         ElseIf theName = "McKay" Then
             Console.WriteLine("Do you not remember me? We spoke together on the phone. I told you I would find you!")
         Else
