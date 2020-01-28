@@ -22,12 +22,6 @@ Module SimpleCalculator
         Console.WriteLine("Please enter a second number and press enter.")
         secondNumber = Console.ReadLine()
 
-        Try
-            Console.WriteLine(CInt(firstNumber) + CInt(secondNumber))
-        Catch ex As Exception
-            Console.WriteLine("Please enter a whole number.")
-        End Try
-
         'prompt user for operator type
         Console.WriteLine("Choose one of the following action:")
         Console.WriteLine("1. Add")
@@ -37,14 +31,25 @@ Module SimpleCalculator
 
         'perform operation base on user's input
         If mathAction = "1" Then
-            Console.WriteLine(firstNumber & "+" & secondNumber & "=" & CInt(firstNumber) + CInt(secondNumber))
+            Try
+                Console.WriteLine(firstNumber & "+" & secondNumber & "=" & CInt(firstNumber) + CInt(secondNumber))
+            Catch ex As Exception
+                Console.WriteLine("Please enter a whole number.")
+                Console.WriteLine(ex.Message.ToString)
+            End Try
         ElseIf mathAction = "2" Then
-            Console.WriteLine(firstNumber & "*" & secondNumber & "=" & CInt(firstNumber) * CInt(secondNumber))
+            Try
+                Console.WriteLine(firstNumber & "*" & secondNumber & "=" & CInt(firstNumber) * CInt(secondNumber))
+            Catch ex As Exception
+                Console.WriteLine("Please enter a whole number.")
+                Console.WriteLine(ex.Message.ToString)
+            End Try
         Else
             Console.WriteLine("I'm sorry, that option is invalid. Please try again.")
         End If
 
         'display result prompt to end
+        Console.WriteLine("Thank you have a nice day.")
         Console.ReadLine()
 
     End Sub
