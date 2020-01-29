@@ -1,5 +1,6 @@
 ﻿Option Explicit On
 Option Strict On
+Option Compare Binary
 
 'McKay Hunsaker
 'RCET0265
