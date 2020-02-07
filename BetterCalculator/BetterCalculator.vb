@@ -16,9 +16,18 @@ Module BetterCalculator
         Dim firstNumber As Integer
         Dim secondNumber As Integer
         Dim mathChoice As String
+        Dim inputNumber As Boolean
         Dim quitProgram As Boolean
 
         quitProgram = False
+
+        Do While quitProgram = False
+            inputNumber = True
+
+            Do While inputNumber = True
+                Console.Write("Choose a number: ")
+            Loop
+        Loop
 
     End Sub
 
