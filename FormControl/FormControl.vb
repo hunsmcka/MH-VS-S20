@@ -19,6 +19,12 @@
         If CheckBox2.Checked = True Then
             MsgBox("Hello, Your Data is No Good!!!")
         End If
+
+        If CheckBox3.Checked = True Then
+            UserPictureBox.Image = My.Resources.Kitten
+        ElseIf CheckBox3.Checked = False Then
+            UserPictureBox.Image = Nothing
+        End If
     End Sub
 
     Private Sub FormControl_Load(sender As Object, e As EventArgs) Handles Me.Load
