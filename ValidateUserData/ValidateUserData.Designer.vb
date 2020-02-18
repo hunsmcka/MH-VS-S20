@@ -26,6 +26,7 @@ Partial Class ValidateUserData
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ValidateButton = New System.Windows.Forms.Button()
+        Me.TotalButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -58,11 +59,21 @@ Partial Class ValidateUserData
         Me.ValidateButton.Text = "Validate"
         Me.ValidateButton.UseVisualStyleBackColor = True
         '
+        'TotalButton
+        '
+        Me.TotalButton.Location = New System.Drawing.Point(298, 325)
+        Me.TotalButton.Name = "TotalButton"
+        Me.TotalButton.Size = New System.Drawing.Size(106, 65)
+        Me.TotalButton.TabIndex = 4
+        Me.TotalButton.Text = "Total"
+        Me.TotalButton.UseVisualStyleBackColor = True
+        '
         'ValidateUserData
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TotalButton)
         Me.Controls.Add(Me.ValidateButton)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
@@ -78,4 +89,5 @@ Partial Class ValidateUserData
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents ValidateButton As Button
+    Friend WithEvents TotalButton As Button
 End Class
