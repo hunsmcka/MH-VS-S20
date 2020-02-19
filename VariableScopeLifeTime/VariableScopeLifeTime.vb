@@ -21,7 +21,9 @@
     Sub MySub()
         Dim aNumber As Integer
         Dim anotherName As String
-
+        aNumber = 3
+        aName = "Billy"
+        anotherName = "Freddy"
 
     End Sub
 End Module
