@@ -27,6 +27,7 @@ Partial Class ValidateUserData
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ValidateButton = New System.Windows.Forms.Button()
         Me.TotalButton = New System.Windows.Forms.Button()
+        Me.ClearButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -56,7 +57,7 @@ Partial Class ValidateUserData
         Me.ValidateButton.Name = "ValidateButton"
         Me.ValidateButton.Size = New System.Drawing.Size(106, 65)
         Me.ValidateButton.TabIndex = 3
-        Me.ValidateButton.Text = "Validate"
+        Me.ValidateButton.Text = "&Validate"
         Me.ValidateButton.UseVisualStyleBackColor = True
         '
         'TotalButton
@@ -65,14 +66,24 @@ Partial Class ValidateUserData
         Me.TotalButton.Name = "TotalButton"
         Me.TotalButton.Size = New System.Drawing.Size(106, 65)
         Me.TotalButton.TabIndex = 4
-        Me.TotalButton.Text = "Total"
+        Me.TotalButton.Text = "&Total"
         Me.TotalButton.UseVisualStyleBackColor = True
+        '
+        'ClearButton
+        '
+        Me.ClearButton.Location = New System.Drawing.Point(298, 206)
+        Me.ClearButton.Name = "ClearButton"
+        Me.ClearButton.Size = New System.Drawing.Size(106, 65)
+        Me.ClearButton.TabIndex = 5
+        Me.ClearButton.Text = "&Clear"
+        Me.ClearButton.UseVisualStyleBackColor = True
         '
         'ValidateUserData
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.TotalButton)
         Me.Controls.Add(Me.ValidateButton)
         Me.Controls.Add(Me.TextBox3)
@@ -90,4 +101,5 @@ Partial Class ValidateUserData
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents ValidateButton As Button
     Friend WithEvents TotalButton As Button
+    Friend WithEvents ClearButton As Button
 End Class
