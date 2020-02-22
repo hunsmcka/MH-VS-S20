@@ -98,7 +98,7 @@ Partial Class DinerMenuForm
         Me.Controls.Add(Me.SaladButton)
         Me.Controls.Add(Me.DinerNameLabel)
         Me.Name = "DinerMenuForm"
-        Me.Text = "Finney's Diner Special Menu"
+        Me.Text = "Freddy's Diner Special Menu"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
