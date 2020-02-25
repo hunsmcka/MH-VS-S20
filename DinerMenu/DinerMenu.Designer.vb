@@ -34,7 +34,7 @@ Partial Class DinerMenuForm
         '
         Me.DinerNameLabel.AutoSize = True
         Me.DinerNameLabel.Font = New System.Drawing.Font("Times New Roman", 22.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DinerNameLabel.Location = New System.Drawing.Point(300, 39)
+        Me.DinerNameLabel.Location = New System.Drawing.Point(297, 37)
         Me.DinerNameLabel.Name = "DinerNameLabel"
         Me.DinerNameLabel.Size = New System.Drawing.Size(265, 43)
         Me.DinerNameLabel.TabIndex = 0
@@ -80,7 +80,7 @@ Partial Class DinerMenuForm
         '
         Me.DisplaySpecialLabel.AutoSize = True
         Me.DisplaySpecialLabel.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DisplaySpecialLabel.Location = New System.Drawing.Point(101, 105)
+        Me.DisplaySpecialLabel.Location = New System.Drawing.Point(155, 111)
         Me.DisplaySpecialLabel.Name = "DisplaySpecialLabel"
         Me.DisplaySpecialLabel.Size = New System.Drawing.Size(0, 23)
         Me.DisplaySpecialLabel.TabIndex = 5
