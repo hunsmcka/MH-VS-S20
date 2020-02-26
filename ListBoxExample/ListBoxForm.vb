@@ -1,4 +1,15 @@
-﻿Public Class ListBoxForm
+﻿Option Compare Binary
+Option Explicit On
+Option Infer On
+Option Strict On
+
+'McKay Hunsaker
+'RCET 0265
+'Spring 2020
+'List Box Form Example
+'https//github.com/hunsmcka/MH-VS-S20
+
+Public Class ListBoxForm
     Private Sub ListBoxForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         'DataListBox
         FirstNameTextBox.Text = "Anakin"
