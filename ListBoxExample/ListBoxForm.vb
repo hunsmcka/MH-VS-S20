@@ -17,15 +17,15 @@ Public Class ListBoxForm
         Tester()
     End Sub
 
-    Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles AddItemButton.Click
+    Private Sub AddItemButton_Click(sender As Object, e As EventArgs) Handles AddItemButton.Click, AddItemToolStripMenuItem.Click
         DataListBox.Items.Add(FirstNameTextBox.Text & " " & LastNameTextBox.Text)
     End Sub
 
-    Private Sub ClearAllButton_Click(sender As Object, e As EventArgs) Handles ClearAllButton.Click
+    Private Sub ClearAllButton_Click(sender As Object, e As EventArgs) Handles ClearAllButton.Click, ClearItemToolStripMenuItem.Click
         DataListBox.Items.Clear()
     End Sub
 
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click, ExitToolStripMenuItem.Click
         Me.Close()
     End Sub
 
@@ -44,5 +44,13 @@ Public Class ListBoxForm
         Dim someNumber As Double
         someNumber = 10 * Math.Sin(Math.PI / 2)
         Console.WriteLine()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        MsgBox("List Box Program Beta Version 1.0.001" & vbNewLine _
+               & "McKay Hunsaker" & vbNewLine _
+               & "Spring 2020" & vbNewLine _
+               & "RCET0265" & vbNewLine _
+               & "In association with the Galactic Republic.")
     End Sub
 End Class

@@ -32,6 +32,15 @@ Partial Class ListBoxForm
         Me.FistNameLabel = New System.Windows.Forms.Label()
         Me.LastNameLabel = New System.Windows.Forms.Label()
         Me.ExampleToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TopMenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TopMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataListBox
@@ -105,6 +114,60 @@ Partial Class ListBoxForm
         Me.LastNameLabel.TabIndex = 7
         Me.LastNameLabel.Text = "Last Name"
         '
+        'TopMenuStrip
+        '
+        Me.TopMenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.TopMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.TopMenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.TopMenuStrip.Name = "TopMenuStrip"
+        Me.TopMenuStrip.Size = New System.Drawing.Size(800, 28)
+        Me.TopMenuStrip.TabIndex = 8
+        Me.TopMenuStrip.Text = "TopMenuStrip"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddItemToolStripMenuItem, Me.ClearItemToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
+        Me.FileToolStripMenuItem.Text = "&File"
+        '
+        'AddItemToolStripMenuItem
+        '
+        Me.AddItemToolStripMenuItem.Name = "AddItemToolStripMenuItem"
+        Me.AddItemToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AddItemToolStripMenuItem.Text = "Add Item"
+        '
+        'ClearItemToolStripMenuItem
+        '
+        Me.ClearItemToolStripMenuItem.Name = "ClearItemToolStripMenuItem"
+        Me.ClearItemToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ClearItemToolStripMenuItem.Text = "Clear Item"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(49, 24)
+        Me.EditToolStripMenuItem.Text = "&Edit"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 24)
+        Me.HelpToolStripMenuItem.Text = "&Help"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
         'ListBoxForm
         '
         Me.AcceptButton = Me.AddItemButton
@@ -120,8 +183,12 @@ Partial Class ListBoxForm
         Me.Controls.Add(Me.ClearAllButton)
         Me.Controls.Add(Me.AddItemButton)
         Me.Controls.Add(Me.DataListBox)
+        Me.Controls.Add(Me.TopMenuStrip)
+        Me.MainMenuStrip = Me.TopMenuStrip
         Me.Name = "ListBoxForm"
         Me.Text = "List Box"
+        Me.TopMenuStrip.ResumeLayout(False)
+        Me.TopMenuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -136,4 +203,12 @@ Partial Class ListBoxForm
     Friend WithEvents FistNameLabel As Label
     Friend WithEvents LastNameLabel As Label
     Friend WithEvents ExampleToolTip As ToolTip
+    Friend WithEvents TopMenuStrip As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddItemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClearItemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
 End Class
