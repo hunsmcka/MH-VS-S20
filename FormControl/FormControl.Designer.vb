@@ -47,6 +47,7 @@ Partial Class FormControl
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.ClearButton = New System.Windows.Forms.Button()
         Me.UserInputGroupBox.SuspendLayout()
         Me.UserSelectionGroupBox.SuspendLayout()
         CType(Me.UserPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -298,12 +299,22 @@ Partial Class FormControl
         Me.CheckBox6.Text = "CheckBox6"
         Me.CheckBox6.UseVisualStyleBackColor = True
         '
+        'ClearButton
+        '
+        Me.ClearButton.Location = New System.Drawing.Point(379, 572)
+        Me.ClearButton.Name = "ClearButton"
+        Me.ClearButton.Size = New System.Drawing.Size(201, 100)
+        Me.ClearButton.TabIndex = 18
+        Me.ClearButton.Text = "C&lear"
+        Me.ClearButton.UseVisualStyleBackColor = True
+        '
         'FormControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.ExitButton
-        Me.ClientSize = New System.Drawing.Size(1008, 562)
+        Me.ClientSize = New System.Drawing.Size(1008, 706)
+        Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.CheckBox6)
         Me.Controls.Add(Me.CheckBox5)
         Me.Controls.Add(Me.CheckBox4)
@@ -354,4 +365,5 @@ Partial Class FormControl
     Friend WithEvents CheckBox5 As CheckBox
     Friend WithEvents CheckBox6 As CheckBox
     Friend WithEvents UserPictureBox As PictureBox
+    Friend WithEvents ClearButton As Button
 End Class

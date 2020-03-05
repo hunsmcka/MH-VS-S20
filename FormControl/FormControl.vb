@@ -9,6 +9,8 @@
         displayText = NameTextBox.Text & vbNewLine & StreetTextBox.Text & vbNewLine & StateTextBox.Text
         DisplayLabel.Text = displayText
 
+        GoButton.Enabled = True
+
     End Sub
 
     Private Sub GoButton_Click(sender As Object, e As EventArgs) Handles GoButton.Click
@@ -29,6 +31,18 @@
 
     Private Sub FormControl_Load(sender As Object, e As EventArgs) Handles Me.Load
         RadioButton1.Checked = True
+
+        GoButton.Enabled = False
+
+    End Sub
+
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        GoButton.Enabled = False
+
+        UserPictureBox.Image = Nothing
+
+        CheckBox3.Checked = False
+
     End Sub
 
 End Class
