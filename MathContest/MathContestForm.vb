@@ -15,6 +15,11 @@ Public Class MathContestForm
 
     End Sub
 
+    Public Function CorrectAnswer(function1 As Integer) As Integer
+
+        Return function1
+    End Function
+
     Private Sub FormControl_Enabled(sender As Object, e As EventArgs) Handles Me.Load, ClearButton.Click
         'Clears all the data when the clear button is clicked or the program is loaded
         InformationGroupBox.Enabled = True
@@ -35,6 +40,8 @@ Public Class MathContestForm
         CorrectTextBox.Text = Str(0)
         NumberTextBox.Text = Str(0)
         NameTextBox.Focus()
+
+        CorrectAnswer(0)
 
     End Sub
 
