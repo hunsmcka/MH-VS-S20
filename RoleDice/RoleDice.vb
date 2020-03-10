@@ -1,4 +1,14 @@
-﻿Module RoleDice
+﻿Option Compare Binary
+Option Explicit On
+Option Infer On
+Option Strict On
+
+'McKay Hunsaker
+'RCET0265
+'Spring 2020
+'Roll Dice
+'https://github.com/hunsmcka/MH-VS-S20
+Module RoleDice
 
     Sub Main()
         Dim firstDice As Single
