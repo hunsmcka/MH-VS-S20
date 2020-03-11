@@ -33,6 +33,7 @@ Module RoleDice
             diceArray(9) = 0
             diceArray(10) = 0
 
+            'Rolls the dice to get random numbers
             For roll = 1 To 1000
                 Randomize()
                 firstDice = Int((6 * Rnd()) + 1)
@@ -40,7 +41,7 @@ Module RoleDice
                 secondDice = Int((6 * Rnd()) + 1)
                 sumOfDice = firstDice + secondDice
 
-
+                'Adds total rolls for each number
                 If sumOfDice = 2 Then
                     diceArray(0) += 1
                 ElseIf sumOfDice = 3 Then
@@ -66,11 +67,26 @@ Module RoleDice
                 End If
             Next
 
+            'Display the header
+            Console.WriteLine(Space(19) & "Roll of The Dice" & Space(19))
+            Console.WriteLine(StrDup(55, "-"))
 
-            Console.WriteLine("2,  3,  4,  5,  6,  7,  8,  9,  10,  11,  12")
-            Console.WriteLine(diceArray(0) & ", " & diceArray(1) & ", " & diceArray(2) & ", " & diceArray(3) & ", " &
-                              diceArray(4) & ", " & diceArray(5) & ", " & diceArray(6) & ", " & diceArray(7) & ", " &
-                              diceArray(8) & ", " & diceArray(9) & ", " & diceArray(10))
+            'Write the possible number on a roll
+            For i = LBound(diceArray) To UBound(diceArray)
+                Console.Write(CStr(i + 2).PadLeft(4) & "|")
+            Next
+
+            Console.WriteLine()
+            Console.WriteLine(StrDup(55, "-"))
+
+            'Write the total rolls for each number
+            For i = LBound(diceArray) To UBound(diceArray)
+                Console.Write(CStr(diceArray(i)).PadLeft(4) & "|")
+            Next
+
+            'Give the user the option to restart
+            Console.WriteLine()
+            Console.WriteLine()
             Console.WriteLine("Run again? Y/N")
 
 
