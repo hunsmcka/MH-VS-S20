@@ -14,7 +14,8 @@ Public Class RollDiceForm
         Me.Close()
     End Sub
 
-    Function TitleArray(diceArray() As Integer, ColumWidth As Integer)
+    'Need to figure out how to display in ListBox
+    Function TitleArray(diceArray() As Integer, ColumWidth As Integer) As String
         'Concat element data
         Dim titleString As String
 
