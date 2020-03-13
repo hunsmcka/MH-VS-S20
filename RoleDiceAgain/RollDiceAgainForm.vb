@@ -14,25 +14,17 @@ Public Class RollDiceForm
         Me.Close()
     End Sub
 
-    'Need to figure out how to display in ListBox
-    Function TitleArray(diceArray() As Integer, ColumWidth As Integer) As String
-        'Concat element data
-        Dim titleString As String
-
-        'Write the possible number on a roll
-        For i = LBound(diceArray) To UBound(diceArray)
-            titleString = CStr(diceArray(i + 2)).PadLeft(4) & "|"
-        Next
-
-        Return titleString
-    End Function
-
     Private Sub RollButton_Click(sender As Object, e As EventArgs) Handles RollButton.Click
 
         Dim firstDice As Single
         Dim secondDice As Single
         Dim sumOfDice As Single
         Dim diceArray(10) As Integer
+        Dim columnHeader As String
+        Dim rollColumn As String
+
+        columnHeader = ""
+        rollColumn = ""
 
         For roll = 1 To 1000
 
@@ -80,22 +72,31 @@ Public Class RollDiceForm
             End If
         Next
 
+        For i = 2 To 12
+            columnHeader &= CStr(i).PadLeft(4) & "|"
+        Next
+
         'Display the header
         RollDiceListBox.Items.Add(Space(19) & "Roll of The Dice" & Space(19))
         RollDiceListBox.Items.Add(StrDup(55, "-"))
-
-        TitleArray(diceArray, 10)
-
+        RollDiceListBox.Items.Add(columnHeader)
         RollDiceListBox.Items.Add(StrDup(55, "-"))
 
         'Write the total rolls for each number
         For i = LBound(diceArray) To UBound(diceArray)
-            RollDiceListBox.Items.Add(CStr(diceArray(i)).PadLeft(4) & "|")
+            rollColumn &= CStr(diceArray(i)).PadLeft(4) & "|"
         Next
+
+        RollDiceListBox.Items.Add(rollColumn)
+        RollDiceListBox.Items.Add(vbNewLine)
+
+        'RollDiceListBox.TopIndex(RollDiceListBox.Items.Count - 1, True)
+        'RollDiceListBox.TopIndex(RollDiceListBox.Items.Count - 1, False)
 
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         RollDiceListBox.Items.Clear()
+
     End Sub
 End Class

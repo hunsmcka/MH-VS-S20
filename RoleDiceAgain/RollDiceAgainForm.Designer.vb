@@ -29,9 +29,11 @@ Partial Class RollDiceForm
         Me.RollDiceListBox = New System.Windows.Forms.ListBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContextMenuStripToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.RollToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,12 +66,12 @@ Partial Class RollDiceForm
         '
         'RollDiceListBox
         '
-        Me.RollDiceListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RollDiceListBox.Font = New System.Drawing.Font("Consolas", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RollDiceListBox.FormattingEnabled = True
-        Me.RollDiceListBox.ItemHeight = 16
+        Me.RollDiceListBox.ItemHeight = 15
         Me.RollDiceListBox.Location = New System.Drawing.Point(12, 44)
         Me.RollDiceListBox.Name = "RollDiceListBox"
-        Me.RollDiceListBox.Size = New System.Drawing.Size(776, 292)
+        Me.RollDiceListBox.Size = New System.Drawing.Size(776, 289)
         Me.RollDiceListBox.TabIndex = 3
         '
         'MenuStrip1
@@ -78,28 +80,40 @@ Partial Class RollDiceForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(800, 28)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContextMenuStripToolStripMenuItem})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RollToolStripMenuItem, Me.ClearToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(60, 24)
         Me.MenuToolStripMenuItem.Text = "&Menu"
         '
-        'ContextMenuStripToolStripMenuItem
-        '
-        Me.ContextMenuStripToolStripMenuItem.Name = "ContextMenuStripToolStripMenuItem"
-        Me.ContextMenuStripToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
-        Me.ContextMenuStripToolStripMenuItem.Text = "ContextMenuStrip"
-        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 24)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 26)
         Me.HelpToolStripMenuItem.Text = "&Help"
+        '
+        'RollToolStripMenuItem
+        '
+        Me.RollToolStripMenuItem.Name = "RollToolStripMenuItem"
+        Me.RollToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RollToolStripMenuItem.Text = "Roll"
+        '
+        'ClearToolStripMenuItem
+        '
+        Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ClearToolStripMenuItem.Text = "Clear"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'RollDiceForm
         '
@@ -129,5 +143,7 @@ Partial Class RollDiceForm
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents ContextMenuStripToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RollToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class
