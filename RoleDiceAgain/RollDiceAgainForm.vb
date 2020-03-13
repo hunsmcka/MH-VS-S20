@@ -90,8 +90,7 @@ Public Class RollDiceForm
         RollDiceListBox.Items.Add(rollColumn)
         RollDiceListBox.Items.Add(vbNewLine)
 
-        'RollDiceListBox.TopIndex(RollDiceListBox.Items.Count - 1, True)
-        'RollDiceListBox.TopIndex(RollDiceListBox.Items.Count - 1, False)
+        RollDiceListBox.TopIndex = RollDiceListBox.Items.Count - 1
 
     End Sub
 
