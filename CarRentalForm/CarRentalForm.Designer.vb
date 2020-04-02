@@ -25,7 +25,7 @@ Partial Class CarRentalForm
         Me.NameTextBox = New System.Windows.Forms.TextBox()
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.AddressLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.AddressTextBox = New System.Windows.Forms.TextBox()
         Me.CityLabel = New System.Windows.Forms.Label()
         Me.CityTextBox = New System.Windows.Forms.TextBox()
         Me.StateLabel = New System.Windows.Forms.Label()
@@ -42,6 +42,20 @@ Partial Class CarRentalForm
         Me.DiscountGroupBox = New System.Windows.Forms.GroupBox()
         Me.SeniorCitizenCheckBox = New System.Windows.Forms.CheckBox()
         Me.AAADiscountCheckBox = New System.Windows.Forms.CheckBox()
+        Me.DistanceDrivenTextBox = New System.Windows.Forms.TextBox()
+        Me.DistanceDrivenLabel = New System.Windows.Forms.Label()
+        Me.MileageChargeLabel = New System.Windows.Forms.Label()
+        Me.MileageChargeTextBox = New System.Windows.Forms.TextBox()
+        Me.DayChargeLabel = New System.Windows.Forms.Label()
+        Me.DayChargeTextBox = New System.Windows.Forms.TextBox()
+        Me.MinusDiscountLabel = New System.Windows.Forms.Label()
+        Me.MinusDiscountTextBox = New System.Windows.Forms.TextBox()
+        Me.YouOweLabel = New System.Windows.Forms.Label()
+        Me.YouOweTextBox = New System.Windows.Forms.TextBox()
+        Me.CalculateButton = New System.Windows.Forms.Button()
+        Me.ClearButton = New System.Windows.Forms.Button()
+        Me.SummaryButton = New System.Windows.Forms.Button()
+        Me.ExitButton = New System.Windows.Forms.Button()
         Me.MilesOrKilometersGroupBox.SuspendLayout()
         Me.DiscountGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -71,12 +85,12 @@ Partial Class CarRentalForm
         Me.AddressLabel.TabIndex = 3
         Me.AddressLabel.Text = "Address"
         '
-        'TextBox1
+        'AddressTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(224, 45)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(253, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.AddressTextBox.Location = New System.Drawing.Point(224, 45)
+        Me.AddressTextBox.Name = "AddressTextBox"
+        Me.AddressTextBox.Size = New System.Drawing.Size(253, 22)
+        Me.AddressTextBox.TabIndex = 2
         '
         'CityLabel
         '
@@ -200,7 +214,7 @@ Partial Class CarRentalForm
         Me.DiscountGroupBox.Controls.Add(Me.SeniorCitizenCheckBox)
         Me.DiscountGroupBox.Controls.Add(Me.AAADiscountCheckBox)
         Me.DiscountGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DiscountGroupBox.Location = New System.Drawing.Point(545, 287)
+        Me.DiscountGroupBox.Location = New System.Drawing.Point(601, 287)
         Me.DiscountGroupBox.Name = "DiscountGroupBox"
         Me.DiscountGroupBox.Size = New System.Drawing.Size(237, 105)
         Me.DiscountGroupBox.TabIndex = 15
@@ -229,11 +243,151 @@ Partial Class CarRentalForm
         Me.AAADiscountCheckBox.Text = "AAA Member Discount"
         Me.AAADiscountCheckBox.UseVisualStyleBackColor = True
         '
+        'DistanceDrivenTextBox
+        '
+        Me.DistanceDrivenTextBox.Enabled = False
+        Me.DistanceDrivenTextBox.Location = New System.Drawing.Point(750, 10)
+        Me.DistanceDrivenTextBox.Name = "DistanceDrivenTextBox"
+        Me.DistanceDrivenTextBox.Size = New System.Drawing.Size(227, 22)
+        Me.DistanceDrivenTextBox.TabIndex = 16
+        '
+        'DistanceDrivenLabel
+        '
+        Me.DistanceDrivenLabel.AutoSize = True
+        Me.DistanceDrivenLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DistanceDrivenLabel.Location = New System.Drawing.Point(528, 12)
+        Me.DistanceDrivenLabel.Name = "DistanceDrivenLabel"
+        Me.DistanceDrivenLabel.Size = New System.Drawing.Size(193, 20)
+        Me.DistanceDrivenLabel.TabIndex = 17
+        Me.DistanceDrivenLabel.Text = "Distance Driven In Miles"
+        '
+        'MileageChargeLabel
+        '
+        Me.MileageChargeLabel.AutoSize = True
+        Me.MileageChargeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MileageChargeLabel.Location = New System.Drawing.Point(528, 47)
+        Me.MileageChargeLabel.Name = "MileageChargeLabel"
+        Me.MileageChargeLabel.Size = New System.Drawing.Size(126, 20)
+        Me.MileageChargeLabel.TabIndex = 19
+        Me.MileageChargeLabel.Text = "Mileage Charge"
+        '
+        'MileageChargeTextBox
+        '
+        Me.MileageChargeTextBox.Enabled = False
+        Me.MileageChargeTextBox.Location = New System.Drawing.Point(750, 45)
+        Me.MileageChargeTextBox.Name = "MileageChargeTextBox"
+        Me.MileageChargeTextBox.Size = New System.Drawing.Size(227, 22)
+        Me.MileageChargeTextBox.TabIndex = 18
+        '
+        'DayChargeLabel
+        '
+        Me.DayChargeLabel.AutoSize = True
+        Me.DayChargeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DayChargeLabel.Location = New System.Drawing.Point(528, 82)
+        Me.DayChargeLabel.Name = "DayChargeLabel"
+        Me.DayChargeLabel.Size = New System.Drawing.Size(98, 20)
+        Me.DayChargeLabel.TabIndex = 21
+        Me.DayChargeLabel.Text = "Day Charge"
+        '
+        'DayChargeTextBox
+        '
+        Me.DayChargeTextBox.Enabled = False
+        Me.DayChargeTextBox.Location = New System.Drawing.Point(750, 80)
+        Me.DayChargeTextBox.Name = "DayChargeTextBox"
+        Me.DayChargeTextBox.Size = New System.Drawing.Size(227, 22)
+        Me.DayChargeTextBox.TabIndex = 20
+        '
+        'MinusDiscountLabel
+        '
+        Me.MinusDiscountLabel.AutoSize = True
+        Me.MinusDiscountLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MinusDiscountLabel.Location = New System.Drawing.Point(528, 117)
+        Me.MinusDiscountLabel.Name = "MinusDiscountLabel"
+        Me.MinusDiscountLabel.Size = New System.Drawing.Size(126, 20)
+        Me.MinusDiscountLabel.TabIndex = 23
+        Me.MinusDiscountLabel.Text = "Minus Discount"
+        '
+        'MinusDiscountTextBox
+        '
+        Me.MinusDiscountTextBox.Enabled = False
+        Me.MinusDiscountTextBox.Location = New System.Drawing.Point(750, 115)
+        Me.MinusDiscountTextBox.Name = "MinusDiscountTextBox"
+        Me.MinusDiscountTextBox.Size = New System.Drawing.Size(227, 22)
+        Me.MinusDiscountTextBox.TabIndex = 22
+        '
+        'YouOweLabel
+        '
+        Me.YouOweLabel.AutoSize = True
+        Me.YouOweLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.YouOweLabel.Location = New System.Drawing.Point(528, 152)
+        Me.YouOweLabel.Name = "YouOweLabel"
+        Me.YouOweLabel.Size = New System.Drawing.Size(76, 20)
+        Me.YouOweLabel.TabIndex = 25
+        Me.YouOweLabel.Text = "You Owe"
+        '
+        'YouOweTextBox
+        '
+        Me.YouOweTextBox.Enabled = False
+        Me.YouOweTextBox.Location = New System.Drawing.Point(750, 150)
+        Me.YouOweTextBox.Name = "YouOweTextBox"
+        Me.YouOweTextBox.Size = New System.Drawing.Size(227, 22)
+        Me.YouOweTextBox.TabIndex = 24
+        '
+        'CalculateButton
+        '
+        Me.CalculateButton.Location = New System.Drawing.Point(232, 423)
+        Me.CalculateButton.Name = "CalculateButton"
+        Me.CalculateButton.Size = New System.Drawing.Size(91, 23)
+        Me.CalculateButton.TabIndex = 26
+        Me.CalculateButton.Text = "C&alculate"
+        Me.CalculateButton.UseVisualStyleBackColor = True
+        '
+        'ClearButton
+        '
+        Me.ClearButton.Location = New System.Drawing.Point(352, 423)
+        Me.ClearButton.Name = "ClearButton"
+        Me.ClearButton.Size = New System.Drawing.Size(91, 23)
+        Me.ClearButton.TabIndex = 27
+        Me.ClearButton.Text = "&Clear"
+        Me.ClearButton.UseVisualStyleBackColor = True
+        '
+        'SummaryButton
+        '
+        Me.SummaryButton.Location = New System.Drawing.Point(472, 423)
+        Me.SummaryButton.Name = "SummaryButton"
+        Me.SummaryButton.Size = New System.Drawing.Size(91, 23)
+        Me.SummaryButton.TabIndex = 28
+        Me.SummaryButton.Text = "&Summary"
+        Me.SummaryButton.UseVisualStyleBackColor = True
+        '
+        'ExitButton
+        '
+        Me.ExitButton.Location = New System.Drawing.Point(592, 423)
+        Me.ExitButton.Name = "ExitButton"
+        Me.ExitButton.Size = New System.Drawing.Size(91, 23)
+        Me.ExitButton.TabIndex = 29
+        Me.ExitButton.Text = "E&xit"
+        Me.ExitButton.UseVisualStyleBackColor = True
+        '
         'CarRentalForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1007, 550)
+        Me.ClientSize = New System.Drawing.Size(1007, 475)
+        Me.Controls.Add(Me.ExitButton)
+        Me.Controls.Add(Me.SummaryButton)
+        Me.Controls.Add(Me.ClearButton)
+        Me.Controls.Add(Me.CalculateButton)
+        Me.Controls.Add(Me.YouOweLabel)
+        Me.Controls.Add(Me.YouOweTextBox)
+        Me.Controls.Add(Me.MinusDiscountLabel)
+        Me.Controls.Add(Me.MinusDiscountTextBox)
+        Me.Controls.Add(Me.DayChargeLabel)
+        Me.Controls.Add(Me.DayChargeTextBox)
+        Me.Controls.Add(Me.MileageChargeLabel)
+        Me.Controls.Add(Me.MileageChargeTextBox)
+        Me.Controls.Add(Me.DistanceDrivenLabel)
+        Me.Controls.Add(Me.DistanceDrivenTextBox)
         Me.Controls.Add(Me.DiscountGroupBox)
         Me.Controls.Add(Me.MilesOrKilometersGroupBox)
         Me.Controls.Add(Me.NumberofDaysLabel)
@@ -247,7 +401,7 @@ Partial Class CarRentalForm
         Me.Controls.Add(Me.CityLabel)
         Me.Controls.Add(Me.CityTextBox)
         Me.Controls.Add(Me.AddressLabel)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.AddressTextBox)
         Me.Controls.Add(Me.NameLabel)
         Me.Controls.Add(Me.NameTextBox)
         Me.Name = "CarRentalForm"
@@ -264,7 +418,7 @@ Partial Class CarRentalForm
     Friend WithEvents NameTextBox As TextBox
     Friend WithEvents NameLabel As Label
     Friend WithEvents AddressLabel As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents AddressTextBox As TextBox
     Friend WithEvents CityLabel As Label
     Friend WithEvents CityTextBox As TextBox
     Friend WithEvents StateLabel As Label
@@ -281,4 +435,18 @@ Partial Class CarRentalForm
     Friend WithEvents DiscountGroupBox As GroupBox
     Friend WithEvents SeniorCitizenCheckBox As CheckBox
     Friend WithEvents AAADiscountCheckBox As CheckBox
+    Friend WithEvents DistanceDrivenTextBox As TextBox
+    Friend WithEvents DistanceDrivenLabel As Label
+    Friend WithEvents MileageChargeLabel As Label
+    Friend WithEvents MileageChargeTextBox As TextBox
+    Friend WithEvents DayChargeLabel As Label
+    Friend WithEvents DayChargeTextBox As TextBox
+    Friend WithEvents MinusDiscountLabel As Label
+    Friend WithEvents MinusDiscountTextBox As TextBox
+    Friend WithEvents YouOweLabel As Label
+    Friend WithEvents YouOweTextBox As TextBox
+    Friend WithEvents CalculateButton As Button
+    Friend WithEvents ClearButton As Button
+    Friend WithEvents SummaryButton As Button
+    Friend WithEvents ExitButton As Button
 End Class
