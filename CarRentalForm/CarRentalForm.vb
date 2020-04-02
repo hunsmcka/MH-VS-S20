@@ -66,6 +66,12 @@ Public Class CarRentalForm
         ElseIf NumberofDaysTextBox.Text = "" Then
             MsgBox("Please enter the Number of Days.")
             NumberofDaysTextBox.Focus()
+        ElseIf CDec(NumberofDaysTextBox.Text) = 0 Then
+            MsgBox("Alert: The Number of Days must be greater than 0!")
+            NumberofDaysTextBox.Focus()
+        ElseIf CDec(NumberofDaysTextBox.Text) > 45 Then
+            MsgBox("Alert: The Number of Days cannot be greater than 45.")
+            NumberofDaysTextBox.Focus()
         Else
 
         End If
@@ -78,9 +84,9 @@ Public Class CarRentalForm
             Case <= 200
                 mileCharge = miles * 0
             Case > 500
-                mileCharge = miles * 0.1D
+                mileCharge = (miles - 500) * 0.1D + 36
             Case Else
-                mileCharge = miles * 0.12D
+                mileCharge = (miles - 200) * 0.12D
         End Select
 
         Return mileCharge
