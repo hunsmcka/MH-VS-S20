@@ -38,58 +38,104 @@ Public Class CarRentalForm
     End Sub
 
     Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click
+        Dim testValid As Boolean
+        testValid = True
 
         'Validate the information if the information is correct then calculate the price
         If NameTextBox.Text = "" Then
             MsgBox("Please enter the customer's name.")
             NameTextBox.Focus()
+            testValid = False
         ElseIf AddressTextBox.Text = "" Then
             MsgBox("Please enter the customer's address.")
             AddressTextBox.Focus()
+            testValid = False
         ElseIf CityTextBox.Text = "" Then
             MsgBox("Please enter the city that the customer lives in.")
             CityTextBox.Focus()
+            testValid = False
         ElseIf StateTextBox.Text = "" Then
             MsgBox("Please enter the state that the customer lives in.")
             StateTextBox.Focus()
+            testValid = False
         ElseIf BeginningMileageTextBox.Text = "" Then
             MsgBox("Please enter the Beginning Odometer Reading.")
             BeginningMileageTextBox.Focus()
+            testValid = False
         ElseIf EndingMileageTextBox.Text = "" Then
             MsgBox("Please enter the Ending Odometer Reading.")
             EndingMileageTextBox.Focus()
-        ElseIf CDec(BeginningMileageTextBox.Text) > CDec(EndingMileageTextBox.Text) Then
-            MsgBox("The Beginning Odometer Reading has to be smaller than the Ending Odometer Reading.")
-            BeginningMileageTextBox.Text = ""
-            EndingMileageTextBox.Text = ""
-            BeginningMileageTextBox.Focus()
+            testValid = False
         ElseIf NumberofDaysTextBox.Text = "" Then
             MsgBox("Please enter the Number of Days.")
             NumberofDaysTextBox.Focus()
-        ElseIf CDec(NumberofDaysTextBox.Text) = 0 Then
-            MsgBox("Alert: The Number of Days must be greater than 0!")
-            NumberofDaysTextBox.Focus()
-        ElseIf CDec(NumberofDaysTextBox.Text) > 45 Then
-            MsgBox("Alert: The Number of Days cannot be greater than 45.")
-            NumberofDaysTextBox.Focus()
+            testValid = False
         Else
+            Try
+                If CDec(BeginningMileageTextBox.Text) > CDec(EndingMileageTextBox.Text) Then
+                    MsgBox("The Beginning Odometer Reading has to be smaller than the Ending Odometer Reading.")
+                    BeginningMileageTextBox.Text = ""
+                    EndingMileageTextBox.Text = ""
+                    BeginningMileageTextBox.Focus()
+                    testValid = False
+                Else
+                    testValid = True
+                End If
+            Catch ex As Exception
+                MsgBox("Please enter a number in the Odometer Reading.")
+                BeginningMileageTextBox.Text = ""
+                EndingMileageTextBox.Text = ""
+                BeginningMileageTextBox.Focus()
+                testValid = False
+            End Try
 
+            Try
+                If CDec(NumberofDaysTextBox.Text) < 1 Then
+                    MsgBox("Alert: The Number of Days must be greater than 0!")
+                    NumberofDaysTextBox.Focus()
+                    testValid = False
+                ElseIf CDec(NumberofDaysTextBox.Text) > 45 Then
+                    MsgBox("Alert: The Number of Days cannot be greater than 45.")
+                    NumberofDaysTextBox.Focus()
+                    testValid = False
+                Else
+                    testValid = True
+                End If
+            Catch ex As Exception
+                MsgBox("Please enter a number in the Number of Days.")
+                NumberofDaysTextBox.Text = ""
+                NumberofDaysTextBox.Focus()
+                testValid = False
+            End Try
+        End If
+
+        Dim mileage As Decimal
+        If testValid = True Then
+            mileage = CDec(EndingMileageTextBox.Text) - CDec(BeginningMileageTextBox.Text)
+            MileageCharge(mileage)
         End If
     End Sub
 
     Function MileageCharge(ByRef miles As Decimal) As Decimal
         Dim mileCharge As Decimal
 
-        Select Case miles
-            Case <= 200
-                mileCharge = miles * 0
-            Case > 500
-                mileCharge = (miles - 500) * 0.1D + 36
-            Case Else
-                mileCharge = (miles - 200) * 0.12D
-        End Select
-
+        If MilesRadioButton.Checked = True Then
+            Select Case miles
+                Case <= 200
+                    mileCharge = miles * 0
+                Case > 500
+                    mileCharge = (miles - 500) * 0.1D + 36
+                Case Else
+                    mileCharge = (miles - 200) * 0.12D
+            End Select
+        ElseIf KilometerRadioButton.Checked = True Then
+            miles = miles * 1.609D
+        End If
         Return mileCharge
     End Function
 
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        'Push Exit Button to close the form
+        Me.Close()
+    End Sub
 End Class

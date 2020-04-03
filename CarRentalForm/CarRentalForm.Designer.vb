@@ -189,7 +189,7 @@ Partial Class CarRentalForm
         '
         Me.KilometerRadioButton.AutoSize = True
         Me.KilometerRadioButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KilometerRadioButton.Location = New System.Drawing.Point(12, 65)
+        Me.KilometerRadioButton.Location = New System.Drawing.Point(12, 70)
         Me.KilometerRadioButton.Name = "KilometerRadioButton"
         Me.KilometerRadioButton.Size = New System.Drawing.Size(101, 24)
         Me.KilometerRadioButton.TabIndex = 16
@@ -201,7 +201,7 @@ Partial Class CarRentalForm
         '
         Me.MilesRadioButton.AutoSize = True
         Me.MilesRadioButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MilesRadioButton.Location = New System.Drawing.Point(12, 31)
+        Me.MilesRadioButton.Location = New System.Drawing.Point(12, 36)
         Me.MilesRadioButton.Name = "MilesRadioButton"
         Me.MilesRadioButton.Size = New System.Drawing.Size(70, 24)
         Me.MilesRadioButton.TabIndex = 15
@@ -225,7 +225,7 @@ Partial Class CarRentalForm
         '
         Me.SeniorCitizenCheckBox.AutoSize = True
         Me.SeniorCitizenCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SeniorCitizenCheckBox.Location = New System.Drawing.Point(13, 65)
+        Me.SeniorCitizenCheckBox.Location = New System.Drawing.Point(13, 70)
         Me.SeniorCitizenCheckBox.Name = "SeniorCitizenCheckBox"
         Me.SeniorCitizenCheckBox.Size = New System.Drawing.Size(208, 24)
         Me.SeniorCitizenCheckBox.TabIndex = 17
@@ -236,7 +236,7 @@ Partial Class CarRentalForm
         '
         Me.AAADiscountCheckBox.AutoSize = True
         Me.AAADiscountCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AAADiscountCheckBox.Location = New System.Drawing.Point(13, 31)
+        Me.AAADiscountCheckBox.Location = New System.Drawing.Point(13, 36)
         Me.AAADiscountCheckBox.Name = "AAADiscountCheckBox"
         Me.AAADiscountCheckBox.Size = New System.Drawing.Size(202, 24)
         Me.AAADiscountCheckBox.TabIndex = 16
