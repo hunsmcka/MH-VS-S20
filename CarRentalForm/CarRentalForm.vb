@@ -110,27 +110,49 @@ Public Class CarRentalForm
         End If
 
         Dim mileage As Decimal
+        Dim dayCharge As Decimal
+        Dim totalCharge As Decimal
+        Dim totalDiscount As Decimal
+
         If testValid = True Then
-            mileage = CDec(EndingMileageTextBox.Text) - CDec(BeginningMileageTextBox.Text)
-            MileageCharge(mileage)
+            If MilesRadioButton.Checked = True Then
+                mileage = CDec(EndingMileageTextBox.Text) - CDec(BeginningMileageTextBox.Text)
+                DistanceDrivenTextBox.Text = Str(mileage)
+                MileageChargeTextBox.Text = "$" & Str(MileageCharge(mileage))
+
+                dayCharge = CDec(NumberofDaysTextBox.Text) * 15
+                DayChargeTextBox.Text = "$" & Str(dayCharge)
+
+                totalCharge = CDec(MileageChargeTextBox.Text) + CDec(DayChargeTextBox.Text)
+
+                If SeniorCitizenCheckBox.Checked = True And AAADiscountCheckBox.Checked = True Then
+                    totalDiscount = totalCharge * 0.08D
+                ElseIf SeniorCitizenCheckBox.Checked = True And AAADiscountCheckBox.Checked = False Then
+                    totalDiscount = totalCharge * 0.03D
+                ElseIf SeniorCitizenCheckBox.Checked = False And AAADiscountCheckBox.Checked = True Then
+                    totalDiscount = totalCharge * 0.05D
+                Else
+                    totalDiscount = 0.00D
+                End If
+
+                MinusDiscountTextBox.Text = "$" & Str(totalDiscount)
+                YouOweTextBox.Text = "$" Str(totalCharge - totalDiscount)
+            End If
         End If
     End Sub
 
     Function MileageCharge(ByRef miles As Decimal) As Decimal
         Dim mileCharge As Decimal
 
-        If MilesRadioButton.Checked = True Then
-            Select Case miles
-                Case <= 200
-                    mileCharge = miles * 0
-                Case > 500
-                    mileCharge = (miles - 500) * 0.1D + 36
-                Case Else
-                    mileCharge = (miles - 200) * 0.12D
-            End Select
-        ElseIf KilometerRadioButton.Checked = True Then
-            miles = miles * 1.609D
-        End If
+        Select Case miles
+            Case <= 200
+                mileCharge = miles * 0
+            Case > 500
+                mileCharge = (miles - 500) * 0.1D + 36
+            Case Else
+                mileCharge = (miles - 200) * 0.12D
+        End Select
+
         Return mileCharge
     End Function
 
