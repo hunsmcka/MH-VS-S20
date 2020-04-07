@@ -35,6 +35,7 @@ Public Class CarRentalForm
         MilesRadioButton.Checked = True
         AAADiscountCheckBox.Checked = False
         SeniorCitizenCheckBox.Checked = False
+        SummaryButton.Enabled = False
     End Sub
 
     Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click
@@ -118,10 +119,10 @@ Public Class CarRentalForm
             If MilesRadioButton.Checked = True Then
                 mileage = CDec(EndingMileageTextBox.Text) - CDec(BeginningMileageTextBox.Text)
                 DistanceDrivenTextBox.Text = Str(mileage)
-                MileageChargeTextBox.Text = "$" & Str(MileageCharge(mileage))
+                MileageChargeTextBox.Text = "$" & Math.Round(MileageCharge(mileage), 2).ToString
 
-                dayCharge = CDec(NumberofDaysTextBox.Text) * 15
-                DayChargeTextBox.Text = "$" & Str(dayCharge)
+                dayCharge = CDec(NumberofDaysTextBox.Text) * 15D
+                DayChargeTextBox.Text = "$" & Math.Round(dayCharge, 2).ToString
 
                 totalCharge = CDec(MileageChargeTextBox.Text) + CDec(DayChargeTextBox.Text)
 
@@ -135,10 +136,40 @@ Public Class CarRentalForm
                     totalDiscount = 0.00D
                 End If
 
-                MinusDiscountTextBox.Text = "$" & Str(totalDiscount)
-                YouOweTextBox.Text = "$" Str(totalCharge - totalDiscount)
+                MinusDiscountTextBox.Text = "$" & Math.Round(totalDiscount, 2).ToString
+                YouOweTextBox.Text = "$" & Math.Round((totalCharge - totalDiscount), 2).ToString
+
+            ElseIf KilometerRadioButton.Checked = True Then
+                mileage = (CDec(EndingMileageTextBox.Text) - CDec(BeginningMileageTextBox.Text)) / 1.609D
+                DistanceDrivenTextBox.Text = Str(mileage)
+                MileageChargeTextBox.Text = "$" & Math.Round(MileageCharge(mileage), 2).ToString
+
+                dayCharge = CDec(NumberofDaysTextBox.Text) * 15D
+                DayChargeTextBox.Text = "$" & Math.Round(dayCharge, 2).ToString
+
+                totalCharge = CDec(MileageChargeTextBox.Text) + CDec(DayChargeTextBox.Text)
+
+                If SeniorCitizenCheckBox.Checked = True And AAADiscountCheckBox.Checked = True Then
+                    totalDiscount = totalCharge * 0.08D
+                ElseIf SeniorCitizenCheckBox.Checked = True And AAADiscountCheckBox.Checked = False Then
+                    totalDiscount = totalCharge * 0.03D
+                ElseIf SeniorCitizenCheckBox.Checked = False And AAADiscountCheckBox.Checked = True Then
+                    totalDiscount = totalCharge * 0.05D
+                Else
+                    totalDiscount = 0.00D
+                End If
+
+                MinusDiscountTextBox.Text = "$" & Math.Round(totalDiscount, 1).ToString
+                YouOweTextBox.Text = "$" & Math.Round(totalCharge - totalDiscount, 1).ToString
+
+            Else
+                MsgBox("Error, please select either Miles or Kilometers.")
             End If
+        Else
+
         End If
+
+        SummaryButton.Enabled = True
     End Sub
 
     Function MileageCharge(ByRef miles As Decimal) As Decimal
