@@ -180,7 +180,7 @@ Partial Class CarRentalForm
         Me.MilesOrKilometersGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MilesOrKilometersGroupBox.Location = New System.Drawing.Point(63, 287)
         Me.MilesOrKilometersGroupBox.Name = "MilesOrKilometersGroupBox"
-        Me.MilesOrKilometersGroupBox.Size = New System.Drawing.Size(296, 105)
+        Me.MilesOrKilometersGroupBox.Size = New System.Drawing.Size(296, 130)
         Me.MilesOrKilometersGroupBox.TabIndex = 14
         Me.MilesOrKilometersGroupBox.TabStop = False
         Me.MilesOrKilometersGroupBox.Text = "Is Odometer In Miles Or Kilometers?"
@@ -189,7 +189,7 @@ Partial Class CarRentalForm
         '
         Me.KilometerRadioButton.AutoSize = True
         Me.KilometerRadioButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KilometerRadioButton.Location = New System.Drawing.Point(12, 70)
+        Me.KilometerRadioButton.Location = New System.Drawing.Point(6, 91)
         Me.KilometerRadioButton.Name = "KilometerRadioButton"
         Me.KilometerRadioButton.Size = New System.Drawing.Size(101, 24)
         Me.KilometerRadioButton.TabIndex = 16
@@ -201,7 +201,7 @@ Partial Class CarRentalForm
         '
         Me.MilesRadioButton.AutoSize = True
         Me.MilesRadioButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MilesRadioButton.Location = New System.Drawing.Point(12, 36)
+        Me.MilesRadioButton.Location = New System.Drawing.Point(6, 57)
         Me.MilesRadioButton.Name = "MilesRadioButton"
         Me.MilesRadioButton.Size = New System.Drawing.Size(70, 24)
         Me.MilesRadioButton.TabIndex = 15
