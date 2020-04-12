@@ -10,6 +10,10 @@ Option Strict On
 'https://github.com/hunsmcka/MH-VS-S20
 
 Public Class CarRentalForm
+
+    Dim numofCustomer As Integer
+    Dim totalDistance As Double
+    Dim totalCost As Double
     Private Sub CarRentalForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ResetAll()
         SummaryButton.Enabled = False
@@ -20,6 +24,7 @@ Public Class CarRentalForm
     End Sub
 
     Sub ResetAll()
+        'Reset the displayed data
         NameTextBox.Text = ""
         AddressTextBox.Text = ""
         CityTextBox.Text = ""
@@ -35,10 +40,13 @@ Public Class CarRentalForm
         MilesRadioButton.Checked = True
         AAADiscountCheckBox.Checked = False
         SeniorCitizenCheckBox.Checked = False
-        SummaryButton.Enabled = False
+        ClearButton.Enabled = False
+        CalculateButton.Enabled = True
+
     End Sub
 
     Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click
+        'Calculate the charge and display for the customers
         Dim testValid As Boolean
         testValid = True
 
@@ -118,11 +126,9 @@ Public Class CarRentalForm
         If testValid = True Then
             If MilesRadioButton.Checked = True Then
                 mileage = CDec(EndingMileageTextBox.Text) - CDec(BeginningMileageTextBox.Text)
-                SumMileage(mileage)
                 DistanceDrivenTextBox.Text = Math.Round(mileage, 2).ToString
+                totalDistance += Math.Round(mileage, 2)
                 MileageChargeTextBox.Text = "$" & Math.Round(MileageCharge(mileage), 2).ToString
-                SumCharge(MileageCharge(mileage))
-                SumCustomers(1)
 
                 dayCharge = CDec(NumberofDaysTextBox.Text) * 15D
                 DayChargeTextBox.Text = "$" & Math.Round(dayCharge, 2).ToString
@@ -141,17 +147,17 @@ Public Class CarRentalForm
 
                 MinusDiscountTextBox.Text = "$" & Math.Round(totalDiscount, 2).ToString
                 YouOweTextBox.Text = "$" & Math.Round((totalCharge - totalDiscount), 2).ToString
+                totalCost += Math.Round((totalCharge - totalDiscount), 2)
 
                 SummaryButton.Enabled = True
 
+                numofCustomer += 1
+
             ElseIf KilometerRadioButton.Checked = True Then
                 mileage = (CDec(EndingMileageTextBox.Text) - CDec(BeginningMileageTextBox.Text)) / 1.609D
-                SumMileage(mileage)
                 DistanceDrivenTextBox.Text = Math.Round(mileage, 2).ToString
+                totalDistance += Math.Round(mileage, 2)
                 MileageChargeTextBox.Text = "$" & Math.Round(MileageCharge(mileage), 2).ToString
-                SumCharge(MileageCharge(mileage))
-                SumCustomers(1)
-
 
                 dayCharge = CDec(NumberofDaysTextBox.Text) * 15D
                 DayChargeTextBox.Text = "$" & Math.Round(dayCharge, 2).ToString
@@ -168,13 +174,20 @@ Public Class CarRentalForm
                     totalDiscount = 0.00D
                 End If
 
-                MinusDiscountTextBox.Text = "$" & Math.Round(totalDiscount, 1).ToString
-                YouOweTextBox.Text = "$" & Math.Round(totalCharge - totalDiscount, 1).ToString
+                MinusDiscountTextBox.Text = "$" & Math.Round(totalDiscount, 2).ToString
+                YouOweTextBox.Text = "$" & Math.Round(totalCharge - totalDiscount, 2).ToString
+                totalCost += Math.Round(totalCharge - totalDiscount, 2)
 
                 SummaryButton.Enabled = True
+
+                numofCustomer += 1
+
             Else
                 MsgBox("Error, please select either Miles or Kilometers.")
             End If
+
+            CalculateButton.Enabled = False
+            ClearButton.Enabled = True
 
         Else
 
@@ -183,6 +196,7 @@ Public Class CarRentalForm
     End Sub
 
     Function MileageCharge(ByRef miles As Decimal) As Decimal
+        'Calculate the charge on mileage
         Dim mileCharge As Decimal
 
         Select Case miles
@@ -202,33 +216,10 @@ Public Class CarRentalForm
         Me.Close()
     End Sub
 
-    Function SumMileage(ByRef mileage As Decimal) As Decimal
-        Dim totalMiles As Decimal
-
-        totalMiles += mileage
-
-        Return totalMiles
-    End Function
-
-    Function SumCustomers(ByRef customer As Integer) As Integer
-        Dim customers As Integer
-
-        customers += customer
-
-        Return customers
-    End Function
-
-    Function SumCharge(ByRef charge As Decimal) As Decimal
-        Dim totalCost As Decimal
-
-        totalCost += charge
-
-        Return totalCost
-    End Function
 
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
-        MessageBox.Show("Total Customers: " & Str(SumCustomers(0)) & vbNewLine &
-               "Total Miles Driven: " & Math.Round(SumMileage(0)).ToString & " mi" & vbNewLine &
-               "Total Charge: $" & Math.Round(SumCharge(0)).ToString, "Detailed Summary")
+        MessageBox.Show("Total Customers: " & Str(numofCustomer) & vbNewLine &
+               "Total Miles Driven: " & Str(totalDistance) & " mi" & vbNewLine &
+               "Total Charge: $" & Str(totalCost), "Detailed Summary")
     End Sub
 End Class
