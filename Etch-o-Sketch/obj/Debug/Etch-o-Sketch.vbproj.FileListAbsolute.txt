@@ -1,0 +1,12 @@
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\bin\Debug\Etch-o-Sketch.exe.config
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\bin\Debug\Etch-o-Sketch.exe
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\bin\Debug\Etch-o-Sketch.pdb
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\bin\Debug\Etch-o-Sketch.xml
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch-o-Sketch.vbprojAssemblyReference.cache
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch_o_Sketch.EtchoSketchForm.resources
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch_o_Sketch.Resources.resources
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch-o-Sketch.vbproj.GenerateResource.cache
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch-o-Sketch.vbproj.CoreCompileInputs.cache
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch-o-Sketch.exe
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch-o-Sketch.xml
+C:\Users\mckay\source\repos\MH-VS-S20\Etch-o-Sketch\Etch-o-Sketch\obj\Debug\Etch-o-Sketch.pdb
